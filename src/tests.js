@@ -1,3 +1,4 @@
+//validating array items to be only number
 function validateNum (n){
     var l = n.length;
     while(l){
@@ -9,6 +10,7 @@ function validateNum (n){
     return true;
 }
 
+//finding min and max in an array
 function findMinMax (nums){
     if(!nums){
         return "No parameter! findMinMax accepts an array of numbers as the only parameter."
@@ -27,5 +29,24 @@ function findMinMax (nums){
             }else{
                 return [nums[0], nums[nums.length - 1]]
             }
+    }
 }
-}
+
+//The fizzBuzz function
+function fizzBuzz (n){
+    if (n === undefined){
+        return "No input! fizzBuzz accepts a number as the parameter";
+    }else if(typeof n !== "number"){
+        return "Invalid input! fizzBuzz accepts only a number as the parameter";
+    }else{
+        if(n%3 ===0 && n%5 === 0){
+            return "FizzBuzz";
+        }else if(n % 3 === 0 ){
+            return "Fizz";
+        }else if(n % 5 === 0){
+            return "Buzz";
+        }else{
+            return n;
+        }
+    }
+    }
