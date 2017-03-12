@@ -50,3 +50,69 @@ function fizzBuzz (n){
         }
     }
     }
+
+//The aritGeo function
+function aritGeo(nums){
+    var arit = false;
+    var geo = false;
+    if(nums.length <= 0){
+        return 0;
+    }else{
+        for(var i = 0; i <= nums.length; i++){
+            if(i < nums.length - 2){
+                num1 = nums[i + 1] / nums[i];
+                num2 = nums[i + 2] / nums[i + 1];
+                if(num1 == num2){
+                    var geo = true;
+                }else{
+                    var geo =false;
+                }
+            }
+
+            if(i == nums.length - 2){
+                num1 = nums[i + 1] / nums[i];
+                num2 = nums[i] / nums[i - 1];
+                if(num1 == num2){
+                    var geo = true;
+                }else{
+                    var geo = false;
+                }
+            }
+        }
+
+        for(var i = 0; i <= nums.length; i++){
+            if(i < nums.length - 2){
+                num1 = nums[i + 1] - nums[i];
+                num2 = nums[i + 2] - nums[i + 1];
+                if(num1 == num2){
+                    var arit = true;
+                }
+                else{
+                    var arit = false;
+                }
+            }
+
+            if(i == nums.length - 2){
+                num1 = nums[i + 1] - nums[i];
+                num2 = nums[i] - nums[i - 1];
+                if(num1 == num2){
+                    var arit = true;
+                }else{
+                    var arit = false;
+                }
+            }
+        }
+
+        if(arit){
+            return "Arithmetic";
+        }
+        else if(geo){
+            return "Geometric";
+        }
+        else{
+            return -1;
+        }
+    }
+
+}
+
